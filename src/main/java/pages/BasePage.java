@@ -13,11 +13,14 @@ import static pages.locators.BasePageLocators.*;
 
 public class BasePage {
     protected WebDriver driver;
-    public BasePage(WebDriver driver) {
+    protected String url;
+
+    public BasePage(WebDriver driver, String url) {
         this.driver = driver;
+        this.url = url;
     }
 
-    public void open(String url) {
+    public void open() {
         driver.get(url);
     }
 
@@ -62,7 +65,8 @@ public class BasePage {
     }
 
     public void shouldBeLoginLink() {
-        Assert.assertTrue(isElementPresent(LOGIN_LINK), "Login link is not presented");
+        Assert.assertTrue(isElementPresent(LOGIN_LINK),
+                "Login link is not presented");
     }
 
     public void goToBasketPage() {
