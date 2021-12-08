@@ -46,4 +46,8 @@ public class ProductPage extends BasePage{
     public void shouldBeSuccessMessage() {
         Assert.assertTrue(isElementPresent(SUCCESS_MESSAGE));
     }
+
+    public void shouldNotBeSuccessMessage() {
+        Assert.assertTrue(isNotElementPresent(SUCCESS_MESSAGE));
+    }
 }

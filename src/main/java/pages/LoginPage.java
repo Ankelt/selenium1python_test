@@ -2,9 +2,12 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-import static pages.locators.LoginPageLocators.LOGIN_FORM;
-import static pages.locators.LoginPageLocators.REGISTER_FORM;
+import java.time.Duration;
+
+import static constants.Constants.TimeoutVariable.IMPLICIT_WAIT;
+import static pages.locators.LoginPageLocators.*;
 
 public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver, String url) {
@@ -28,5 +31,17 @@ public class LoginPage extends BasePage{
 
     public void shouldBeRegisterForm() {
         Assert.assertTrue("Register form is not presented", isElementPresent(REGISTER_FORM));
+    }
+
+    public void registerNewUser(String email, String password) {
+        WebElement emailForm = driver.findElement(EMAIL_FORM);
+        emailForm.sendKeys(email);
+        WebElement passwordForm = driver.findElement(PASSWORD_FORM);
+        passwordForm.sendKeys(password);
+        WebElement passwordFormRepeat = driver.findElement(PASSWORD_FORM_REPEAT);
+        passwordFormRepeat.sendKeys(password);
+        WebElement button = driver.findElement(REGISTER_BUTTON);
+        button.click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
     }
 }

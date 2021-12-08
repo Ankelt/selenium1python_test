@@ -9,6 +9,10 @@ public class Constants {
     public static class Urls {
         public static final String PYTHON_HOME_PAGE = "http://selenium1py.pythonanywhere.com/";
         public static final String PYTHON_PRODUCT_PAGE =
-                "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/";
+                "http://selenium1py.pythonanywhere.com/ru/catalogue/the-city-and-the-stars_95/";
+        public static final String PYTHON_LOGIN_PAGE =
+                "http://selenium1py.pythonanywhere.com/ru/accounts/login/";
+        public static final String PYTHON_BASKET_PAGE =
+                "http://selenium1py.pythonanywhere.com/ru/basket/";
     }
 }

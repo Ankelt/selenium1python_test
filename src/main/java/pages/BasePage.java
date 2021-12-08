@@ -22,6 +22,7 @@ public class BasePage {
 
     public void open() {
         driver.get(url);
+
     }
 
     public WebElement waitElementIsVisible(WebElement element) {
@@ -77,5 +78,10 @@ public class BasePage {
     public void shouldBeAuthorised() {
         Assert.assertTrue(isElementPresent(USER_ICON),
                 "User icon is not presented, probably unauthorised user");
+    }
+
+    public void logout() {
+        WebElement logout = driver.findElement(LOGOUT_LINK);
+        logout.click();
     }
 }
